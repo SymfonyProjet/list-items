@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des articles
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-center my-5">Liste des articles</h1>
+
+	{% for article in articles %}
+    <div class="container">
+		<div class="row w-50 mx-auto">
+			<div class="col card my-5">
+                <img src="{{ asset('images/articles/' ~ article.image ~ '.jpg') }}" alt="{{ article.image }}">
+				<h2>
+                    <a href="{{ path('show_article', {titre : article.titre|replace({"é":"e", "'":"-", " ":"-"})|lower}) }}">{{ article.titre }}</a>    
+                </h2>
+				<p>{{ article.contenu }}</p>
+			</div>
+		</div>
+    </div>
+	{% endfor %}
+{% endblock %}

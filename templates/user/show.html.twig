@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Profil d'{{ user.nom }}
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5">
+		<h1 class="text-center">Profil d'{{ user.nom }}</h1>
+		<div class="card mx-auto" style="width: 18rem;">
+			<img class="rounded mx-auto mt-2" src="{{ asset('images/users/' ~ user.nom ~ '.jpg') }}" alt="photo de profil d'{{ user.nom }}">
+			<hr>
+			<div class="card-body">
+				<h5 class="card-title">Adresse</h5>
+				<p class="card-text">
+					{{ user.adresse.rue }} <br>
+					{{ user.adresse.cp }} <br>
+					{{ user.adresse.ville }}
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

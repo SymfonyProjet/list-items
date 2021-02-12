@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.titre }}{% endblock %}
+
+{% block body %}
+	<h1 class="text-center my-5">Article : {{ article.titre }} </h1>
+
+    <div class="container">
+		<div class="row w-50 mx-auto">
+			<div class="col card my-2">
+                <h2>{{ article.titre }}</h2>
+                <img src="{{ asset('images/articles/' ~ article.image ~ '.jpg') }}" alt="{{ article.image }}">
+				<p>{{ article.contenu }}</p>
+			</div>
+		</div>
+    </div>
+{% endblock %}
